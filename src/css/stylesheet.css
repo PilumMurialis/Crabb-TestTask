@@ -517,7 +517,7 @@ body {
 }
 
 .product .slick-arrow.slick-prev {
-    top: 75%;
+    top: 95%;
     left: 80px;
     background: url("../../src/image/image/arrow__left.png") 0 0 no-repeat;
     height: 34px;
@@ -530,7 +530,7 @@ body {
 }
 
 .product .slick-arrow.slick-next {
-    top: 75%;
+    top: 95%;
     left: 140px;
     background: url("../../src/image/image/arrow__right.png") 0 0 no-repeat;
     height: 34px;
