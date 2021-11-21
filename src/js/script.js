@@ -15,18 +15,31 @@ $(document).ready(function (){
 });
 
 /* Инициализация и настройка slick для каталога */
-
-$(document).ready(function (){
-    $('.product').slick({
-        infinite: false,
-        slidesToShow: 4,
-        slidesToScroll: 1
+if (document.documentElement.clientWidth > 1000) {
+    $(document).ready(function (){
+        $('.product').slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
     });
-});
+}
 
+if (document.documentElement.clientWidth < 1000) {
+    $(document).ready(function (){
+        $('.product').slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: true,
+            autoplay: true,
+            speed: 200
+        });
+    });
+}
 const searchButton = document.querySelector('.wrapper__block__search')
 const loginButton = document.querySelector('.wrapper__block__login')
-const loginImage = document.querySelector('.login__image')
+const loginClose = document.querySelector('.modal__close')
 const searchInput = document.querySelector('.wrapper__block__item')
 const container = document.querySelector('.wrapper__block')
 const modalContainer = document.querySelector('.wrapper__modal')
@@ -92,6 +105,15 @@ modalButton.addEventListener('click', (e) => {
                hide(modalContainer);
            }
        });
+   }
+});
+
+loginClose.addEventListener('click', (e) => {
+   if (e.target === loginClose) {
+       modalInput.forEach((item) => {
+          item.value = ''
+       });
+       hide(modalContainer);
    }
 });
 
